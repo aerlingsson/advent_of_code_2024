@@ -1,6 +1,7 @@
 module Day1Input
 
-let exampleInput = "
+let exampleInput =
+  "
 3   4
 4   3
 2   5
@@ -9,7 +10,8 @@ let exampleInput = "
 3   3
 "
 
-let realInput = """
+let realInput =
+  """
 35039   67568
 61770   80134
 64079   34668
