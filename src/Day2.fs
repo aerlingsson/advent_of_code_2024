@@ -33,3 +33,13 @@ let validReport levels =
 
 let part1 (input: string) =
   input |> parse |> List.choose validReport |> _.Length
+
+let part2 (input: string) =
+  let ok, errors = input |> parse |> List.partition (validReport >> Option.isSome)
+
+  let fixedErrors =
+    errors
+    |> List.map (fun levels -> [0..levels.Length-1] |> List.map (fun idx -> levels |> List.removeAt idx |> validReport))
+    |> List.filter (List.exists Option.isSome)
+
+  ok.Length + fixedErrors.Length
