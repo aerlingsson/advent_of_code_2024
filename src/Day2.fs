@@ -39,7 +39,9 @@ let part2 (input: string) =
 
   let fixedErrors =
     errors
-    |> List.map (fun levels -> [0..levels.Length-1] |> List.map (fun idx -> levels |> List.removeAt idx |> validReport))
+    |> List.map (fun levels ->
+      [ 0 .. levels.Length - 1 ]
+      |> List.map (fun idx -> levels |> List.removeAt idx |> validReport))
     |> List.filter (List.exists Option.isSome)
 
   ok.Length + fixedErrors.Length

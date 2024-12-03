@@ -6,8 +6,7 @@ open Xunit
 let part1 () =
   let ex = Day2.part1 Day2Input.exampleInput
   Assert.Equal(2, ex)
-  let real = Day2.part1 Day2Input.realInput
-  printfn "%A" real
+  printfn "%A" (Day2.part1 Day2Input.realInput)
 
 [<Fact>]
 let part2 () =
