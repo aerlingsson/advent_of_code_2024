@@ -45,7 +45,8 @@ let part1 (input: string) =
     0
 
 let part2 (input: string) =
-  let offsetPairs = [ ((-1, -1), (1, 1)), ((1, -1), (-1, 1)) ]
+  let offsetPair1 = ((-1, -1), (1, 1))
+  let offsetPair2 = ((1, -1), (-1, 1))
 
   let charPositions = input |> parse
   let isCharMatch = isCharMatch charPositions
@@ -58,10 +59,7 @@ let part2 (input: string) =
   |> Seq.filter (fun x -> x.Value = 'A')
   |> Seq.fold
     (fun (count: int) x ->
-      if
-        offsetPairs
-        |> List.exists (fun (pair1, pair2) -> isPairMatch x.Key pair1 && isPairMatch x.Key pair2)
-      then
+      if isPairMatch x.Key offsetPair1 && isPairMatch x.Key offsetPair2 then
         count + 1
       else
         count)
