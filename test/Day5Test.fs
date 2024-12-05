@@ -8,8 +8,8 @@ let part1 () =
   Assert.Equal(143, ex)
   printfn "%A" (Day5.part1 Day5Input.realInput)
 
-//[<Fact>]
-//let part2 () =
-//  let ex = Day5.part2 Day5Input.exampleInput
-//  Assert.Equal(9, ex)
-//  printfn "%A" (Day5.part2 Day5Input.realInput)
+[<Fact>]
+let part2 () =
+  let ex = Day5.part2 Day5Input.exampleInput
+  Assert.Equal(123, ex)
+  printfn "%A" (Day5.part2 Day5Input.realInput)
